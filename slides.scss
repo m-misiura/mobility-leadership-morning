@@ -1,0 +1,78 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+/*-- scss:defaults --*/
+
+
+
+$font-family-sans-serif: 'derailed', sans-serif;
+$presentation-heading-color: #e14fd0;
+$fontcolor: #ffffff;
+$body-bg: #000000;
+$presentation-title-slide-text-align: "left";
+$code-block-font-size: 0.6em;
+$code-color: #ffffff;
+$presentation-h1-font-size: 2.5em;
+$presentation-h2-font-size: 1.4em;
+$presentation-font-size: .7em;
+
+/*-- scss:rules --*/
+
+details>summary {
+    font-size: 0.75em;
+}
+
+// These sizes are appropriate for NICD secondary logo landscape
+.reveal .slide-logo {
+    height: 72px !important;
+    width: 210px !important;
+    max-width: unset !important;
+    max-height: unset !important;
+}
+
+.small {
+    font-size: 0.75em;
+}
+
+ul,
+ol,
+dl ul,
+ol,
+dl {
+    font-size: 85%;
+}
+
+@font-face {
+    font-family: 'Derailed';
+    font-style: normal;
+    font-weight: 450;
+    src: local(''),
+        url("fonts/derailed-regular-webfont.woff2") format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url("fonts/derailed-regular-webfont.woff") format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+.reveal .slides {
+    color: $fontcolor;
+}
+
+.reveal .slides .footnote {
+    font-size: 0.4em;
+    color: $fontcolor;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: none;
+    border-top: 0.05em solid $fontcolor;
+    width: 75%;
+    white-space: normal;
+    overflow: visible;
+    bottom: 35px;
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.reveal .slides .footnote:hover {
+    transform: scale(1.1);
+}
