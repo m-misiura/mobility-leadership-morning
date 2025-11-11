@@ -598,7 +598,92 @@ Use Chip Huyen's [advice](https://huyenchip.com/2023/06/07/generative-ai-strateg
 7. :necktie: tie model evaluation to business metrics
 8. :tada: have fun
 
-## :rocket: Tips and tricks
+# :rocket: Bonus -- quick wins
+
+## :rocket: Choosing the right "chatbot" model
+
+Evaluation and comparison platform, [lmarena](https://lmarena.ai/) is a useful tool to compare different LLMs across prompts of your choice.
+
+While it relies on human preference for evaluation, this is a good way to quickly shortlist models for your use case
+
+## :rocket: Prompt engineering
+
+[Lilian Weng](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/) defines __prompt engineering__ as: 
+
+> methods for how to communicate with an LLM to steer its behavior for desired outcomes without updating the model weights
+
+A __prompt__ contains any of the [following](https://www.promptingguide.ai/introduction/elements): 
+
+- __input__ -- the text which is fed to the model to generate a sequence of most likely tokens
+- __instruction__ -- a specific task for a model to perform
+- __context__ -- external information that can steer the model towards a desired outcome
+- __output indicator__ -- the type or format of the desired response
+
+## :rocket: Prompt engineering
+
+There are several key strategies for prompt engineering including:
+
+- basic prompting:
+    - zero-shot 
+    - few-shot
+- instruction prompting
+- chain- / tree-of-thought prompting
+
+For a comprehensive overview of different prompting strategies, visit e.g. [this guide](https://cloud.google.com/discover/what-is-prompt-engineering)
+
+##  :chart_with_upwards_trend: Model performance can be sensitive to the choice of prompt strategy 
+
+::: {.r-stack}
+![](img/zs-vs-zs-cot.png){.fragment .fade-in-then-out width="1000" height="500"}
+
+![](img/cot-table.png){.fragment width="750" height="600"}
+:::
+
+<p class="footnote">_figures taken from [Large Language Models are Zero-Shot Reasoners](https://arxiv.org/pdf/2205.11916.pdf)_<p>
+
+## :zap: Recommendations for writing prompts
+
+When developing prompts, the following set of recommendations can be useful:
+
+- try to be specific and precise and avoiding say “not do something” but rather specify what to do
+- if the requirement is complex, break it down into multiple prompts
+- combine it with other prompt engineering techniques, such as few-shot prompting
+
+OpenAI has published a blog on best practices for [prompt engineering](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api) for their suite of models, which is worth a read
+
+## :zap: Recommendations for writing prompts contd.
+
+Additionally, it is prudent to:
+
+- use [prompt templates](https://python.langchain.com/docs/modules/model_io/prompts/prompt_templates/) to ensure consistency and reproducibility
+- consider using multiple prompts to generate multiple candidate answers and produce final answer by either the majority vote ([self-consistency](https://arxiv.org/abs/2203.11171)) or pick the best single answer
+- understand the risks of [prompt injection attacks](https://arxiv.org/abs/2302.12173) and how to mitigate them
+
+## :warning: Usage policies {.scrollable}
+
+- Most LLMs come with usage policies that warrant careful consideration, for example:
+
+    - [OpenAI's usage policy](https://openai.com/policies/usage-policies)
+    - [OpenAI's sharing and publication policy](https://openai.com/policies/sharing-publication-policy)
+
+- Provided that the usage of LLMs is in line with the suitable policy, it is prudent to: 
+
+    - __document__ the usage, by e.g. keeping a log of prompts used
+    - __communicate__ the usage to the relevant stakeholders by accompanying the generated content with a disclaimer, such as:
+
+    > This text was generated in part with __INSERT MODEL NAME AND VERSION__. Upon generating draft language, the author reviewed, edited, and revised the language to their own liking and takes ultimate responsibility for the content of this publication
+
+## :rocket: Tips and tricks -- prompt engineering
+
+To get better at prompt engineering, practice is key!
+
+::: {.fragment .fade-up}
+However, if you know Polish you might have the upper hand based on this [paper](https://arxiv.org/pdf/2503.01996):
+
+> Surprisingly, English is not the top-performing language on long-context tasks (ranked 6th out of 26), with Polish emerging as the top language.
+:::
+
+## :rocket: GenAI tools that I find useful
 
 Current AI tools are an excellent productivity booster; here's the tools that I find particularly useful in 2025:
 
@@ -606,22 +691,3 @@ Current AI tools are an excellent productivity booster; here's the tools that I 
 - [Claude Code](https://www.claude.com/product/claude-code) / [GitHub Copilot](https://github.com/features/copilot) -- code generation and explanation
 - [WhisprFlow](https://wisprflow.ai/) -- AI-powered transcription and note-taking
 - [Deep Research](https://gemini.google/overview/deep-research/) -- agentic (re)search assistant
-
-## :rocket: Tips and tricks -- choosing the right "chatbot" model
-
-Evaluation and comparison platform, [lmarena](https://lmarena.ai/) is a useful tool to compare different LLMs across prompts of your choice.
-
-While it relies on human preference for evaluation, this is a good way to quickly shortlist models for your use case.
-
-## :rocket: Tips and tricks -- prompt engineering
-
-The more you prompt, the better you get at prompting
-
-![](img/REFRENCE_ME)
-
-However, if you know Polish you might have the upper hand based on this [paper](https://arxiv.org/pdf/2503.01996):
-
-> Surprisingly, English is not the top-performing language on long-context tasks (ranked 6th out of 26), with Polish emerging as the top language.
-
-## :rocket: Tips and tricks -- prompt engineering
-

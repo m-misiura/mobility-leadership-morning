@@ -395,7 +395,7 @@
 </figure>
 </div>
 </div><div class="column" style="width:30%;">
-<div id="b17488f0" class="cell" data-execution_count="1">
+<div id="7cee9981" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 
                 <audio controls="controls">
@@ -866,9 +866,104 @@
 <li><span class="emoji" data-emoji="necktie">👔</span> tie model evaluation to business metrics</li>
 <li><span class="emoji" data-emoji="tada">🎉</span> have fun</li>
 </ol>
+</section></section>
+<section>
+<section id="bonus-quick-wins" class="title-slide slide level1 center">
+<h1><span class="emoji" data-emoji="rocket">🚀</span> Bonus – quick wins</h1>
+
 </section>
-<section id="tips-and-tricks" class="slide level2">
-<h2><span class="emoji" data-emoji="rocket">🚀</span> Tips and tricks</h2>
+<section id="choosing-the-right-chatbot-model" class="slide level2">
+<h2><span class="emoji" data-emoji="rocket">🚀</span> Choosing the right “chatbot” model</h2>
+<p>Evaluation and comparison platform, <a href="https://lmarena.ai/">lmarena</a> is a useful tool to compare different LLMs across prompts of your choice.</p>
+<p>While it relies on human preference for evaluation, this is a good way to quickly shortlist models for your use case</p>
+</section>
+<section id="prompt-engineering" class="slide level2">
+<h2><span class="emoji" data-emoji="rocket">🚀</span> Prompt engineering</h2>
+<p><a href="https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/">Lilian Weng</a> defines <strong>prompt engineering</strong> as:</p>
+<blockquote>
+<p>methods for how to communicate with an LLM to steer its behavior for desired outcomes without updating the model weights</p>
+</blockquote>
+<p>A <strong>prompt</strong> contains any of the <a href="https://www.promptingguide.ai/introduction/elements">following</a>:</p>
+<ul>
+<li><strong>input</strong> – the text which is fed to the model to generate a sequence of most likely tokens</li>
+<li><strong>instruction</strong> – a specific task for a model to perform</li>
+<li><strong>context</strong> – external information that can steer the model towards a desired outcome</li>
+<li><strong>output indicator</strong> – the type or format of the desired response</li>
+</ul>
+</section>
+<section id="prompt-engineering-1" class="slide level2">
+<h2><span class="emoji" data-emoji="rocket">🚀</span> Prompt engineering</h2>
+<p>There are several key strategies for prompt engineering including:</p>
+<ul>
+<li>basic prompting:
+<ul>
+<li>zero-shot</li>
+<li>few-shot</li>
+</ul></li>
+<li>instruction prompting</li>
+<li>chain- / tree-of-thought prompting</li>
+</ul>
+<p>For a comprehensive overview of different prompting strategies, visit e.g.&nbsp;<a href="https://cloud.google.com/discover/what-is-prompt-engineering">this guide</a></p>
+</section>
+<section id="model-performance-can-be-sensitive-to-the-choice-of-prompt-strategy" class="slide level2">
+<h2><span class="emoji" data-emoji="chart_with_upwards_trend">📈</span> Model performance can be sensitive to the choice of prompt strategy</h2>
+<div class="r-stack">
+<p><img data-src="img/zs-vs-zs-cot.png" class="fragment fade-in-then-out" width="1000" height="500"></p>
+<p><img data-src="img/cot-table.png" class="fragment" width="750" height="600"></p>
+</div>
+<p class="footnote">
+<em>figures taken from <a href="https://arxiv.org/pdf/2205.11916.pdf">Large Language Models are Zero-Shot Reasoners</a></em>
+</p><p>
+</p></section>
+<section id="recommendations-for-writing-prompts" class="slide level2">
+<h2><span class="emoji" data-emoji="zap">⚡</span> Recommendations for writing prompts</h2>
+<p>When developing prompts, the following set of recommendations can be useful:</p>
+<ul>
+<li>try to be specific and precise and avoiding say “not do something” but rather specify what to do</li>
+<li>if the requirement is complex, break it down into multiple prompts</li>
+<li>combine it with other prompt engineering techniques, such as few-shot prompting</li>
+</ul>
+<p>OpenAI has published a blog on best practices for <a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">prompt engineering</a>, which is worth a read; note it is specific to their suite of models and other providers may have their own guides</p>
+</section>
+<section id="recommendations-for-writing-prompts-contd." class="slide level2">
+<h2><span class="emoji" data-emoji="zap">⚡</span> Recommendations for writing prompts contd.</h2>
+<p>Additionally, it is prudent to:</p>
+<ul>
+<li>use <a href="https://python.langchain.com/docs/modules/model_io/prompts/prompt_templates/">prompt templates</a> to ensure consistency and reproducibility</li>
+<li>consider using multiple prompts to generate multiple candidate answers and produce final answer by either the majority vote (<a href="https://arxiv.org/abs/2203.11171">self-consistency</a>) or pick the best single answer</li>
+<li>understand the risks of <a href="https://arxiv.org/abs/2302.12173">prompt injection attacks</a> and how to mitigate them</li>
+</ul>
+</section>
+<section id="usage-policies" class="slide level2 scrollable">
+<h2><span class="emoji" data-emoji="warning">⚠️</span> Usage policies</h2>
+<ul>
+<li><p>Most LLMs come with usage policies that warrant careful consideration, for example:</p>
+<ul>
+<li><a href="https://openai.com/policies/usage-policies">OpenAI’s usage policy</a></li>
+<li><a href="https://openai.com/policies/sharing-publication-policy">OpenAI’s sharing and publication policy</a></li>
+</ul></li>
+<li><p>Provided that the usage of LLMs is in line with the suitable policy, it is prudent to:</p>
+<ul>
+<li><strong>document</strong> the usage, by e.g.&nbsp;keeping a log of prompts used</li>
+<li><strong>communicate</strong> the usage to the relevant stakeholders by accompanying the generated content with a disclaimer, such as:</li>
+</ul>
+<blockquote>
+<p>This text was generated in part with <strong>INSERT MODEL NAME AND VERSION</strong>. Upon generating draft language, the author reviewed, edited, and revised the language to their own liking and takes ultimate responsibility for the content of this publication</p>
+</blockquote></li>
+</ul>
+</section>
+<section id="tips-and-tricks-prompt-engineering" class="slide level2">
+<h2><span class="emoji" data-emoji="rocket">🚀</span> Tips and tricks – prompt engineering</h2>
+<p>To get better at prompt engineering, practice is key!</p>
+<div class="fragment fade-up">
+<p>However, if you know Polish you might have the upper hand based on this <a href="https://arxiv.org/pdf/2503.01996">paper</a>:</p>
+<blockquote>
+<p>Surprisingly, English is not the top-performing language on long-context tasks (ranked 6th out of 26), with Polish emerging as the top language.</p>
+</blockquote>
+</div>
+</section>
+<section id="genai-tools-that-i-find-useful" class="slide level2">
+<h2><span class="emoji" data-emoji="rocket">🚀</span> GenAI tools that I find useful</h2>
 <p>Current AI tools are an excellent productivity booster; here’s the tools that I find particularly useful in 2025:</p>
 <ul>
 <li><a href="https://notebooklm.google/">NotebookLM</a> – summary and Q&amp;A with files</li>
@@ -876,19 +971,6 @@
 <li><a href="https://wisprflow.ai/">WhisprFlow</a> – AI-powered transcription and note-taking</li>
 <li><a href="https://gemini.google/overview/deep-research/">Deep Research</a> – agentic (re)search assistant</li>
 </ul>
-</section>
-<section id="tips-and-tricks-an-example" class="slide level2">
-<h2><span class="emoji" data-emoji="rocket">🚀</span> Tips and tricks – an example</h2>
-</section>
-<section id="tips-and-tricks-choosing-the-right-chatbot-model" class="slide level2">
-<h2><span class="emoji" data-emoji="rocket">🚀</span> Tips and tricks – choosing the right “chatbot” model</h2>
-<p>Evaluation and comparison platform, <a href="https://lmarena.ai/">lmarena</a> is a useful tool to compare different LLMs across prompts of your choice, e.g.&nbsp;</p>
-<iframe width="780" height="500" src="https://lmarena.ai/?mode=side-by-side" title="LM Arena comparison"></iframe>
-</section>
-<section id="tips-and-tricks-a-practical-guide-to-prompting" class="slide level2">
-<h2><span class="emoji" data-emoji="rocket">🚀</span> Tips and tricks – a practical guide to prompting</h2>
-<iframe data-external="1" width="780" height="500" src="https://lmarena.ai/?mode=side-by-side" title="LM Arena comparison">
-</iframe>
 
 </section></section>
     </div>
