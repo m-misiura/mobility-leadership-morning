@@ -16,18 +16,18 @@ format:
         height: 768        
 ---
 
-# Perspectives on Generative Artificial Intelligence{background-iframe="multiple-images/index.html"}
+# Perspectives on Generative Artificial Intelligence {background-iframe="hello-matrix/index.html"} 
 
 ## :wave: About me -- Dr Mac Misiura 
 
 ::::{.columns} 
-::: {.column width=50%}
-![](img/headshot.jpg){width="550" height="550"}
+::: {.column width=40%}
+![](img/headshot.jpg){width="490" height="550"}
 :::
-::: {.column width=50%}
+::: {.column width=60%}
 :mortar_board: Obtained a PhD in Applied Mathematics and Statistics from Newcastle University 
 
-:computer: Worked as a Data Scientist at the [the National Innovation Centre for Data](https://www.nicd.org.uk/) until August 2024
+:computer: Worked as a Data Scientist at the [the National Innovation Centre for Data](https://www.nicd.org.uk/)
 
 :tophat: Currently working as a Senior Machine Learning Engineer at Red Hat
 
@@ -38,11 +38,31 @@ format:
 :::
 ::::
 
-## :wave: About me -- Dr Mac Misiura
+## :hand: What does my role mean in practice?
 
-If I wasn't doing language modelling, I would be doing hand modelling
+I develop technical solutions that minimise the risk of using GenAI models and try to avoid scenarios where Generative AI applications go "rogue", e.g. 
 
-![](img/hand-model.png){width="600" height="600" fig-align="center"}
+::: {.r-stack}
+![](img/bot_risk_0.png){.fragment width="450" height="450"}
+
+![](img/bot_risk_1.png){.fragment width="300" height="450"}
+
+![](img/bot_risk_2.png){.fragment width="225" height="300"}
+
+![](img/bot_risk_3.png){.fragment width="425" height="500"}
+:::
+
+## :hand: What will we cover in this presentation?
+
+:one: Demystifying jargon
+
+:two: Brief history of how we got here
+
+:three: Where are we going next
+
+:four: Business implications
+
+:five: Quick wins
 
 # :keycap_ten: Starter for ten
 
@@ -103,7 +123,7 @@ The RHS example leverages a __machine learning model__
 
 ## :raised_hand: What is Machine Learning (ML)? {.smaller}
 
-![](img/robot-graduating.jpeg){fig-align="center" height=300}
+![](img/robot-graduating.png){fig-align="center" height=300}
 
 ::: {.fragment .fade-up}
 > [Arthur L. Samuel](https://www.semanticscholar.org/paper/Some-Studies-in-Machine-Learning-Using-the-Game-of-Samuel/e9e6bb5f2a04ae30d8ecc9287f8b702eedd7b772?p2df): __ML__ is the field of study that gives computers the ability to learn without being explicitly programmed
@@ -114,18 +134,18 @@ The RHS example leverages a __machine learning model__
 ::: 
 
 <p class="footnote">
-_image generated using [Stable Diffusion v2](https://huggingface.co/stabilityai/stable-diffusion-2) with a prompt: `a robot during their graduation ceremony looking happy`_<p>
+_image generated using [Gemini Nano Banana 2](https://gemini.google/overview/image-generation/) with a prompt: `a robot during their graduation ceremony looking happy`_<p>
 
 ## :pager: Machine Learning: an example
 
-![](img/sentiment-analysis.jpeg){fig-align="center" height=350}
+![](img/sentiment-analysis.png){fig-align="center" height=350}
 
 - __Task, T__: sentiment analysis of social media posts
 - __Training, E__: social media posts along with their corresponding sentiment labels
 - __Performance Measure, P__: accuracy of correctly classifying the sentiment of social media posts, as judged by comparing the predicted labels with human-labeled sentiment
 
 <p class="footnote">
-_image generated using [Stable Diffusion v2](https://huggingface.co/stabilityai/stable-diffusion-2) with a prompt: `a dashboard with three emojis: angry, neutral, happy`_<p>
+_image generated using [Gemini Nano Banana 2](https://gemini.google/overview/image-generation/) with a prompt: `a dashboard with three emojis: angry, neutral, happy`_<p>
 
 ## :raised_hand: What is Deep Learning (DL)?
 
@@ -187,25 +207,104 @@ _text generated using [LLaVa](https://huggingface.co/docs/transformers/main/en/m
 ## :microphone: GenAI examples: text-2-audio 
 
 ::::{.columns}
-::: {.column width=70%}
-![](img/gucci-salad-cover.jpg){fig-align="center" height=600}
+::: {.column width=50%}
+![](img/execs_cover.png){fig-align="center" height=600}
 :::
 
-::: {.column width=30%}
+::: {.column width=50%}
 ```{python}
 #| echo: false
 #| output: true
 
 from IPython.display import Audio, display
 
-display(Audio("img/gucci-salad.mp3"))
+display(Audio("img/exec_jingle.mp3"))
 ```
-![](img/gucci-salad-lyrics.png){fig-align="left" height=525}
+
+```{yaml}{.scrollable}
+[Verse 1]
+Thursday morning, June four
+Borough Road, we on the floor
+The Ministry, doors swing wide
+Global minds on one side
+
+Arrival eight-thirty, coffee cups
+Big ideas start lining up
+HR leaders in the room
+Talkin' growth, talkin' moves
+
+[Pre-Chorus]
+GenAI in the enterprise
+Clear eyes, real use, real size
+Talent plans, service game
+Everybody there for the same aim
+
+[Chorus]
+At The Ministry, we build
+At The Ministry, we build
+AI, talent, service excellence
+All that pressure turn to skill
+
+At The Ministry, we connect
+At The Ministry, we connect
+Same room, same mission
+Different lanes, same respect
+
+[Verse 2]
+Dr Mac break it down clean
+Machine learning made seen
+Red Hat voice, practical
+Every answer tactical
+
+Cath talk access to the talent
+Mobility with the business in balance
+AI agent in the loop
+Making hard moves look smooth
+
+[Pre-Chorus]
+Kate brings the service truth
+Lessons learned for the whole crew
+Senior voices, honest talk
+You can hear the future walk
+
+[Chorus]
+At The Ministry, we build
+At The Ministry, we build
+AI, talent, service excellence
+All that pressure turn to skill
+
+At The Ministry, we connect
+At The Ministry, we connect
+Same room, same mission
+Different lanes, same respect
+
+[Bridge]
+Optional lunch, stay around
+Keep the conversation grounded
+Questions up, cards on the table
+Every seat in the room stay able
+
+Global coverage, one strong thread
+From the morning into what comes next
+Borough Rd on your mind
+Real work, real time
+
+[Chorus]
+At The Ministry, we build
+At The Ministry, we build
+AI, talent, service excellence
+All that pressure turn to skill
+
+At The Ministry, we connect
+At The Ministry, we connect
+Same room, same mission
+Different lanes, same respect
+```
 :::
 ::::
 
 <p class="footnote">
-_audio generated using [Suno AI](https://app.suno.ai/) with a prompt: `a trap song in the style of my current favourite artist, Future, about how we should have a varied diet`_ <p>
+_audio generated using [Suno AI](https://app.suno.ai/) with a prompt: `take a look at this [event description](https://www.k2group.com/en-us/insights/london-mobility-leadership-morning) and turn it into a Hip-Hop and R&B song`; image generated with [Gemini Nano Banana 2](https://gemini.google/overview/image-generation/) with a prompt: `execs and machine learning engineers on an rap album cover`_<p>
 
 ## :movie_camera: GenAI examples: text-2-video
 
@@ -223,14 +322,19 @@ _3D asset generated using [Meshy](https://app.meshy.ai/discover) with a prompt: 
 
 # :thought_balloon: How did we get here?
 
-## :clock230: Timeline and key breakthroughs
+## :clock230: Timeline: "ancient" and "recent" history 
 
-![](img/gen-ai-timeline.jpeg){fig-align="center" height=500}
+While __GenAI__ models have been around for a while, their recent success exploded in 2023
 
-While __GenAI__ models have been around for a while, their recent success could be attributed to a __several key breakthroughs__ 
+::: {.r-stack}
+
+![](img/gen-ai-timeline.jpeg){.fragment fig-align="center" height=550}
+
+![](img/gen-ai-timeline-recent.png){.fragment fig-align="center" height=550}
+:::
 
 <p class="footnote">
-_picture taken from [David Foster](https://www.linkedin.com/feed/update/urn:li:activity:7044233450295316480/)_<p>
+_first picture taken from [David Foster](https://www.linkedin.com/feed/update/urn:li:activity:7044233450295316480/); second picture generated with a [Gemini Nano Banana 2](https://gemini.google/overview/image-generation/)_<p>
 
 ## :bulb: Breakthrough 1: foundation models
 
@@ -390,6 +494,57 @@ __Instructions__: finetuning on tasks phrased as instructions seems to improve z
 
 <p class="footnote">_figure taken from [Scaling Instruction-Finetuned Language Models
 ](https://arxiv.org/pdf/2210.11416.pdf)_<p>
+
+## :bulb: Breakthrough 5: assistants that can reason
+
+![](img/reasoning.jpg){fig-align="center" height=450}
+
+Encouraging models to explain their reasoning process seems to improve performance their ability to perform deduction and make decisions
+
+<p class="footnote">_figure taken from [Understanding Reasoning LLMs
+](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms)_<p>
+
+## :bulb: Breakthrough 6: tool use
+
+In a _typical_ conversation with a model through an API, the conversation will alternate between user and assistant messages:
+
+```bash 
+conversation = [
+    {"role": "user", "content": "I need help with my order"},
+    {"role": "assistant", "content": "I'd be happy to help. Could you provide your order number?"},
+    {"role": "user", "content": "It's ORDER-123"},
+]
+```
+
+## :bulb: Breakthrough 6: tool use
+
+But you can extend this conversation to include other message types, for example:
+
+```bash
+conversation = [
+    {
+        "role": "user",
+        "content": "What's the status of my transaction T1001?"
+    },
+    {
+        "role": "assistant",
+        "content": "",
+        "function_call": {
+            "name": "retrieve_payment_status",
+            "arguments": "{\"transaction_id\": \"T1001\"}"
+        }
+    },
+    {
+        "role": "tool",
+        "name": "retrieve_payment_status",
+        "content": "{\"status\": \"Paid\"}"
+    },
+    {
+        "role": "assistant",
+        "content": "Your transaction T1001 has been successfully paid."
+    }
+]
+```
 
 # :thought_balloon: Where are we going?
 
@@ -600,7 +755,7 @@ Use Chip Huyen's [advice](https://huyenchip.com/2023/06/07/generative-ai-strateg
 
 # :rocket: Bonus -- quick wins
 
-## :rocket: Choosing the right "chatbot" model
+## :rocket: Choosing the right model
 
 Evaluation and comparison platform, [lmarena](https://lmarena.ai/) is a useful tool to compare different LLMs across prompts of your choice.
 
